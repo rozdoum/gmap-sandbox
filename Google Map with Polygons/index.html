@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+	<div style="width: 50%">
+	    <p><h3>Using Google JavaScript Map Visualization API</h3></p>
+		<p>The current result of investigation using Google JavaScript Map API is a several examples that can demonstrate some possibility of map visualization.</p>
+		<p>The Google Maps provides Data layer to display custom data and maps. The Data layer is a container for arbitrary geospatial data that uses <a href="http://geojson.org/">GeoJSON format</a>. The GeoJSON can be used to render data as markers, polylines and polygons on a Google map.</p>
+		<p>The first example of map visualization <a href="http://144.76.24.135/gmaps/Google%20Map%20with%20Polygons/google-map-with-polygons.html">the map of US where GeoJSON are used to render bounds of states</a> and fill them using different colors.</p>
+		<p align="center"><img src="pictures/google-map-us.png"></p>
+		<p>The second one is a zoom for the some states of US. If you open link with first example and double click on the following states: Alaska, Alabama, Arkansas, Arizona, California, Colorado, Connecticut, District of Columbia, Delaware, Florida, Georgia, Hawaii, Iowa, Idaho, Illinois you can see details of state. To return back refresh page.</p>
+		<p align="center"><img src="pictures/google-map-us-california.png"></p>
+		<p>The Google map API provides Google Overlays to add on the map different objects. Overlays are objects on the map that are tied to latitude/longitude coordinates, so they move when you drag or zoom the map. We can add predefined objects like markers, info window, lines, areas, circles and rectangles, images. Also we can add custom objects by implementing the OverlayView interface.</p>
+		<p>The next example is adding <a href="http://144.76.24.135/gmaps/Google%20Map%20with%20Polygons/google-map-with-pie-chart-example.html">google pie chart to map</a>.</p>
+		<p align="center"><img src="pictures/google-map-marker-pie-chart.png"></p>
+		<p>Using Overlays we can add any google chart to map. For example <a href="http://144.76.24.135/gmaps/Google%20Map%20with%20Polygons/google-map-with-donut-chart.html">donuts charts for US.</a></p>
+		<p align="center"><img src="pictures/google-map-marker-donuts-chart.png"></p>
+		<p>We can use <a href="https://github.com/dspnikder/map/tree/anpo-2.5.257-stc">anpo MapServer</a> as source of GeoJSON data to render polygons on the Google Map. For that we need to add converting radians data to latitude/longitude coordinates and <a href="http://www.codingpedia.org/ama/how-to-add-cors-support-on-the-server-side-in-java-with-jersey/">setup header of server response</a> using <a href="http://www.w3.org/TR/cors/">Cross-Origin Resource Sharing standard</a>. The map server returns about 15000+ points for bounds of state. It's too much to render polygon on the map. It would be reasonable to optimize data array to reduce server traffic.</p>
+		<p>The Colorado was rendered using data from map server. Add server's data is very simple. We invoke method <i>loadGeoJson</i> from Google API like:</p>
+		<p align="center"><code>map.data.loadGeoJson("http://169.254.54.220:8080/geojson/us/state/CO")</code></p>
+		<p align="center"><img src="pictures/google-map-with-data-fom-map-server.png"></p>
+	</div>
+	</body>
+</html>

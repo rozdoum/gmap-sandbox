@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBIqw_7EWV0niZcGAEVCEMGYQqXRIgSKok"></script>
+		<script type="text/javascript">
+			var map;
+			
+			google.maps.event.addDomListener(window, 'load', initialize);
+			
+			function initialize() {
+				var mapOptions = {
+					center: {lat: 48, lng: -102},
+					zoom: 4,
+					disableDefaultUI: false,
+					draggable: true,
+					keyboardShortcuts: false
+				};
+				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+				map.data.loadGeoJson("http://169.254.54.220:8080/geojson/us/state/CO");
+
+				map.data.setStyle(function(feature) {
+					return {
+						fillColor: 'blue',
+						strokeColor: '#FFFFFF',
+						strokeWeight: 1.5
+					};
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr><td>
+				<button onclick="alert(map.getCenter());">Get center</button>
+			</td></tr>
+			<tr><td>
+				<div id="info-box" align='right'>Info box</div>
+			</td></tr>
+			<tr><td>				
+				<div id="map-canvas" style="width: 1200px; height: 800px;"></div>
+			</td></tr>
+		</table>
+	</body>
+</html>

@@ -65,18 +65,19 @@
 		var geoarray = {
 			"country": "USA",
 			"states" : [
-				{"code": "AK", "data": AK, "center": new google.maps.LatLng(66, -151)},
-				{"code": "AL", "data": AL, "center": new google.maps.LatLng(35, -89)},
-				{"code": "AR", "data": AR, "center": new google.maps.LatLng(37, -96)},
-				{"code": "AZ", "data": AZ, "center": new google.maps.LatLng(36, -114)},
-				{"code": "CA", "data": CA, "center": new google.maps.LatLng(38, -121)},
-				{"code": "CO", "data": CO, "center": new google.maps.LatLng(41, -109)},
-				{"code": "CT", "data": CT, "center": new google.maps.LatLng(43, -77)},
+				{"code": "AK", "data": AK, "center": new google.maps.LatLng(66, -151), "name": "Alaska" },
+				{"code": "AL", "data": AL, "center": new google.maps.LatLng(35, -89), "name": "Alabama"},
+				{"code": "AR", "data": AR, "center": new google.maps.LatLng(37, -96), "name": "Arkansas"},
+				{"code": "AZ", "data": AZ, "center": new google.maps.LatLng(36, -114), "name": "Arizona"},
+				{"code": "CA", "data": CA, "center": new google.maps.LatLng(38, -121), "name": "California"},
+				{"code": "CO", "data": CO, "center": new google.maps.LatLng(41, -109), "name": "Colorado"},
+				{"code": "CT", "data": CT, "center": new google.maps.LatLng(43, -77), "name": "Connecticut"},
 				{"code": "DC", "data": DC, "center": new google.maps.LatLng(40, -79)},
 				{"code": "DE", "data": DE, "center": new google.maps.LatLng(0,0)},
 				{"code": "FL", "data": FL, "center": new google.maps.LatLng(0,0)},
 				{"code": "GA", "data": GA, "center": new google.maps.LatLng(0,0)},
 				{"code": "HI", "data": HI, "center": new google.maps.LatLng(0,0)},
+				{"code": "IA", "data": IA, "center": new google.maps.LatLng(0,0)},
 				{"code": "ID", "data": ID, "center": new google.maps.LatLng(0,0)},
 				{"code": "IL", "data": IL, "center": new google.maps.LatLng(0,0)},
 				{"code": "IN", "data": IN}, {"code": "KS", "data": KS},
@@ -169,9 +170,10 @@
 
 			map.data.setStyle(function(feature) {
 				return {
-					fillColor: 'transparent',
+					fillColor: 'silver',
 					strokeColor: '#FFFFFF',
-					strokeWeight: 1.5
+					strokeWeight: 1.5,
+					fillOpacity: 1
 				};
 			});
 
@@ -186,15 +188,15 @@
 			});
 
 			for (var i = 0; i < states.length; i++) {
-				if (states[i].code == 'DE') {
+				if (states[i].code == 'DC') {
 					break;
 				}
 				var options = {
 					legend: {position: 'none'},
 					fontSize: 8,
 					backgroundColor: 'transparent',
-					pieHole: 0.4
-					//title: states[i].code
+					pieHole: 0.4,
+					title: states[i].name
 				};
 				var d = getRandomDonutData();
 				var data = google.visualization.arrayToDataTable([
