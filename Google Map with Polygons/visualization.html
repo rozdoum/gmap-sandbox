@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<!-- states bounds -->
+		<script type="text/javascript" src="./countries/USA/AK.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CT.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/DC.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/DE.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/HI.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IN.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/KS.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/KY.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/LA.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/MA.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/MD.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ME.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/MI.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/MN.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/MO.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/MS.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/MT.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/NC.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ND.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/NE.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/NH.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/NJ.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/NM.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/NV.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/NY.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/OH.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/OK.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/OR.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/PA.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/PR.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/RI.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/SC.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/SD.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/TN.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/TX.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/UT.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/VA.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/VT.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/WA.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/WI.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/WV.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/WY.geojson"></script>
+		<!-- parts of states -->
+		<!-- USA AK -->
+		<script type="text/javascript" src="./countries/USA/AK/AleutiansEast.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/AleutiansWest.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/Anchorage.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/Bethel.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/BristolBay.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/Denali.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/Dillingham.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/FairbanksNorthStar.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/Haines.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/Juneau.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/KenaiPeninsula.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/KetchikanGateway.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/KodiakIsland.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/LakeandPeninsula.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/MatanuskaSusitna.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/Nome.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/NorthSlope.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/NorthwestArctic.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/PrinceofWalesOuterKetchikan.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/Sitka.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/SkagwayHoonahAngoon.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/SoutheastFairbanks.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/ValdezCordova.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/WadeHampton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/WrangellPetersburg.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/Yakutat.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AK/YukonKoyukuk.geojson"></script>
+		<!-- USA AL -->
+		<script type="text/javascript" src="./countries/USA/AL/Autauga.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Baldwin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Barbour.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Bibb.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Blount.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Bullock.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Butler.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Calhoun.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Chambers.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Cherokee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Chilton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Choctaw.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Clarke.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Clay.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Cleburne.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Coffee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Colbert.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Conecuh.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Coosa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Covington.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Crenshaw.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Cullman.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Dale.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Dallas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/DeKalb.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Elmore.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Escambia.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Etowah.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Fayette.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Franklin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Geneva.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Greene.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Hale.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Henry.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Houston.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Jackson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Jefferson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Lamar.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Lauderdale.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Lawrence.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Lee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Limestone.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Lowndes.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Macon.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Madison.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Marengo.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Marion.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Marshall.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Mobile.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Monroe.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Montgomery.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Morgan.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Perry.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Pickens.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Pike.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Randolph.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Russell.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Shelby.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/StClair.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Sumter.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Talladega.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Tallapoosa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Tuscaloosa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Walker.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Washington.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Wilcox.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AL/Winston.geojson"></script>
+		<!-- USA AR -->
+		<script type="text/javascript" src="./countries/USA/AR/Arkansas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Ashley.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Baxter.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Benton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Boone.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Bradley.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Calhoun.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Carroll.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Chicot.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Clark.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Clay.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Cleburne.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Cleveland.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Columbia.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Conway.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Craighead.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Crawford.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Crittenden.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Cross.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Dallas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Desha.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Drew.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Faulkner.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Franklin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Fulton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Garland.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Grant.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Greene.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Hempstead.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/HotSpring.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Howard.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Independence.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Izard.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Jackson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Jefferson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Johnson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Lafayette.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Lawrence.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Lee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Lincoln.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/LittleRiver.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Logan.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Lonoke.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Madison.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Marion.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Miller.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Mississippi.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Monroe.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Montgomery.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Nevada.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Newton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Ouachita.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Perry.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Phillips.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Pike.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Poinsett.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Polk.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Pope.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Prairie.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Pulaski.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Randolph.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Saline.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Scott.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Searcy.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Sebastian.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Sevier.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Sharp.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/StFrancis.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Stone.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Union.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/VanBuren.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Washington.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/White.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Woodruff.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AR/Yell.geojson"></script>
+		<!-- USA AZ -->
+		<script type="text/javascript" src="./countries/USA/AZ/Apache.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/Cochise.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/Coconino.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/Gila.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/Graham.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/Greenlee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/LaPaz.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/Maricopa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/Mohave.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/Navajo.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/Pima.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/Pinal.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/SantaCruz.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/Yavapai.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/AZ/Yuma.geojson"></script>
+		<!-- USA CA -->
+		<script type="text/javascript" src="./countries/USA/CA/Alameda.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Alpine.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Amador.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Butte.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Calaveras.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Colusa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/ContraCosta.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/DelNorte.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/ElDorado.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Fresno.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Glenn.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Humboldt.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Imperial.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Inyo.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Kern.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Kings.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Lake.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Lassen.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/LosAngeles.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Madera.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Marin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Mariposa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Mendocino.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Merced.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Modoc.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Mono.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Monterey.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Napa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Nevada.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Orange.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Placer.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Plumas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Riverside.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Sacramento.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/SanBenito.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/SanBernardino.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/SanDiego.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/SanFrancisco.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/SanJoaquin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/SanLuisObispo.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/SanMateo.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/SantaBarbara.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/SantaClara.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/SantaCruz.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Shasta.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Sierra.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Siskiyou.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Solano.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Sonoma.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Stanislaus.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Sutter.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Tehama.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Trinity.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Tulare.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Tuolumne.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Ventura.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Yolo.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CA/Yuba.geojson"></script>
+		<!-- USA CO -->
+		<script type="text/javascript" src="./countries/USA/CO/Adams.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Alamosa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Arapahoe.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Archuleta.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Baca.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Bent.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Boulder.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Chaffee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Cheyenne.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/ClearCreek.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Conejos.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Costilla.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Crowley.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Custer.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Delta.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Denver.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Dolores.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Douglas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Eagle.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/ElPaso.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Elbert.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Fremont.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Garfield.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Gilpin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Grand.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Gunnison.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Hinsdale.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Huerfano.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Jackson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Jefferson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Kiowa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/KitCarson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/LaPlata.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Lake.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Larimer.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/LasAnimas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Lincoln.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Logan.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Mesa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Mineral.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Moffat.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Montezuma.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Montrose.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Morgan.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Otero.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Ouray.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Park.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Phillips.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Pitkin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Prowers.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Pueblo.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/RioBlanco.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/RioGrande.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Routt.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Saguache.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/SanJuan.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/SanMiguel.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Sedgwick.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Summit.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Teller.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Washington.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Weld.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CO/Yuma.geojson"></script>
+		<!-- USA CT -->
+		<script type="text/javascript" src="./countries/USA/CT/Fairfield.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CT/Hartford.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CT/Litchfield.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CT/Middlesex.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CT/NewHaven.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CT/NewLondon.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CT/Tolland.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/CT/Windham.geojson"></script>
+		<!-- USA DC -->
+		<script type="text/javascript" src="./countries/USA/DC/DistrictofColumbia.geojson"></script>
+		<!-- USA DE -->
+		<script type="text/javascript" src="./countries/USA/DE/Kent.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/DE/NewCastle.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/DE/Sussex.geojson"></script>
+		<!-- USA FL -->
+		<script type="text/javascript" src="./countries/USA/FL/Alachua.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Baker.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Bay.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Bradford.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Brevard.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Broward.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Calhoun.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Charlotte.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Citrus.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Clay.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Collier.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Columbia.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/DeSoto.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Dixie.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Duval.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Escambia.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Flagler.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Franklin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Gadsden.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Gilchrist.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Glades.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Gulf.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Hamilton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Hardee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Hendry.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Hernando.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Highlands.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Hillsborough.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Holmes.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/IndianRiver.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Jackson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Jefferson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Lafayette.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Lake.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Lee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Leon.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Levy.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Liberty.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Madison.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Manatee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Marion.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Martin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/MiamiDade.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Monroe.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Nassau.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Okaloosa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Okeechobee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Orange.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Osceola.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/PalmBeach.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Pasco.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Pinellas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Polk.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Putnam.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/SantaRosa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Sarasota.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Seminole.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/StJohns.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/StLucie.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Sumter.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Suwannee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Taylor.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Union.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Volusia.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Wakulla.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Walton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/FL/Washington.geojson"></script>
+		<!-- USA GA -->
+		<script type="text/javascript" src="./countries/USA/GA/Appling.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Atkinson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Bacon.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Baker.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Baldwin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Banks.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Barrow.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Bartow.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/BenHill.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Berrien.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Bibb.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Bleckley.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Brantley.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Brooks.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Bryan.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Bulloch.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Burke.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Butts.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Calhoun.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Camden.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Candler.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Carroll.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Catoosa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Charlton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Chatham.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Chattahoochee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Chattooga.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Cherokee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Clarke.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Clay.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Clayton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Clinch.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Cobb.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Coffee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Colquitt.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Columbia.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Cook.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Coweta.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Crawford.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Crisp.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Dade.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Dawson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Decatur.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/DeKalb.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Dodge.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Dooly.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Dougherty.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Douglas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Early.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Echols.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Effingham.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Elbert.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Emanuel.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Evans.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Fannin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Fayette.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Floyd.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Forsyth.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Franklin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Fulton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Gilmer.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Glascock.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Glynn.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Gordon.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Grady.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Greene.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Gwinnett.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Habersham.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Hall.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Hancock.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Haralson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Harris.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Hart.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Heard.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Henry.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Houston.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Irwin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Jackson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Jasper.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/JeffDavis.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Jefferson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Jenkins.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Johnson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Jones.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Lamar.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Lanier.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Laurens.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Lee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Liberty.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Lincoln.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Long.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Lowndes.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Lumpkin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Macon.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Madison.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Marion.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/McDuffie.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/McIntosh.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Meriwether.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Miller.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Mitchell.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Monroe.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Montgomery.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Morgan.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Murray.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Muscogee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Newton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Oconee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Oglethorpe.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Paulding.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Peach.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Pickens.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Pierce.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Pike.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Polk.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Pulaski.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Putnam.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Quitman.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Rabun.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Randolph.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Richmond.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Rockdale.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Schley.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Screven.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Seminole.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Spalding.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Stephens.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Stewart.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Sumter.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Talbot.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Taliaferro.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Tattnall.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Taylor.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Telfair.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Terrell.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Thomas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Tift.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Toombs.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Towns.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Treutlen.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Troup.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Turner.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Twiggs.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Union.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Upson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Walker.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Walton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Ware.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Warren.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Washington.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Wayne.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Webster.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Wheeler.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/White.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Whitfield.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Wilcox.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Wilkes.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Wilkinson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/GA/Worth.geojson"></script>
+		<!-- USA HI -->
+		<script type="text/javascript" src="./countries/USA/HI/Hawaii.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/HI/Honolulu.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/HI/Kalawao.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/HI/Kauai.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/HI/Maui.geojson"></script>
+		<!-- USA IA -->
+		<script type="text/javascript" src="./countries/USA/IA/Adair.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Adams.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Allamakee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Appanoose.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Audubon.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Benton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/BlackHawk.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Boone.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Bremer.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Buchanan.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/BuenaVista.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Butler.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Calhoun.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Carroll.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Cass.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Cedar.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/CerroGordo.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Cherokee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Chickasaw.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Clarke.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Clay.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Clayton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Clinton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Crawford.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Dallas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Davis.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Decatur.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Delaware.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/DesMoines.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Dickinson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Dubuque.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Emmet.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Fayette.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Floyd.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Franklin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Fremont.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Greene.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Grundy.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Guthrie.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Hamilton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Hancock.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Hardin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Harrison.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Henry.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Howard.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Humboldt.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Ida.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Iowa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Jackson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Jasper.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Jefferson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Johnson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Jones.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Keokuk.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Kossuth.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Lee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Linn.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Louisa.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Lucas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Lyon.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Madison.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Mahaska.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Marion.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Marshall.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Mills.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Mitchell.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Monona.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Monroe.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Montgomery.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Muscatine.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/OBrien.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Osceola.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Page.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/PaloAlto.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Plymouth.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Pocahontas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Polk.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Pottawattamie.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Poweshiek.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Ringgold.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Sac.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Scott.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Shelby.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Sioux.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Story.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Tama.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Taylor.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Union.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/VanBuren.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Wapello.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Warren.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Washington.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Wayne.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Webster.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Winnebago.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Winneshiek.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Woodbury.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Worth.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IA/Wright.geojson"></script>
+		<!-- USA ID -->
+		<script type="text/javascript" src="./countries/USA/ID/Ada.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Adams.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Bannock.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/BearLake.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Benewah.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Bingham.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Blaine.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Boise.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Bonner.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Bonneville.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Boundary.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Butte.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Camas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Canyon.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Caribou.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Cassia.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Clark.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Clearwater.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Custer.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Elmore.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Franklin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Fremont.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Gem.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Gooding.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Idaho.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Jefferson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Jerome.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Kootenai.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Latah.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Lemhi.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Lewis.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Lincoln.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Madison.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Minidoka.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/NezPerce.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Oneida.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Owyhee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Payette.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Power.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Shoshone.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Teton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/TwinFalls.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Valley.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/ID/Washington.geojson"></script>
+		<!-- USA IL -->
+		<script type="text/javascript" src="./countries/USA/IL/Adams.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Alexander.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Bond.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Boone.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Brown.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Bureau.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Calhoun.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Carroll.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Cass.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Champaign.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Christian.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Clark.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Clay.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Clinton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Coles.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Cook.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Crawford.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Cumberland.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/DeWitt.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/DeKalb.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Douglas.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/DuPage.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Edgar.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Edwards.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Effingham.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Fayette.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Ford.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Franklin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Fulton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Gallatin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Greene.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Grundy.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Hamilton.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Hancock.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Hardin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Henderson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Henry.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Iroquois.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Jackson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Jasper.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Jefferson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Jersey.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/JoDaviess.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Johnson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Kane.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Kankakee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Kendall.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Knox.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/LaSalle.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Lake.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Lawrence.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Lee.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Livingston.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Logan.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Macon.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Macoupin.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Madison.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Marion.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Marshall.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Mason.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Massac.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/McDonough.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/McHenry.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/McLean.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Menard.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Mercer.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Monroe.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Montgomery.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Morgan.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Moultrie.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Ogle.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Peoria.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Perry.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Piatt.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Pike.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Pope.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Pulaski.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Putnam.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Randolph.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Richland.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/RockIsland.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Saline.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Sangamon.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Schuyler.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Scott.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Shelby.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/StClair.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Stark.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Stephenson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Tazewell.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Union.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Vermilion.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Wabash.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Warren.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Washington.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Wayne.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/White.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Whiteside.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Will.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Williamson.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Winnebago.geojson"></script>
+		<script type="text/javascript" src="./countries/USA/IL/Woodford.geojson"></script>
+
+		<script type="text/javascript">
+			var geoarray = {
+				"country": "USA",
+				"states" : [
+					{"code": "AK", "data": AK,
+						"provinces": [USA_AK_AleutiansEast, USA_AK_AleutiansWest, USA_AK_Anchorage,
+						USA_AK_Bethel, USA_AK_BristolBay, USA_AK_Denali, USA_AK_Dillingham, USA_AK_FairbanksNorthStar,
+						USA_AK_Haines, USA_AK_Juneau, USA_AK_KenaiPeninsula, USA_AK_KetchikanGateway, USA_AK_KodiakIsland,
+						USA_AK_LakeandPeninsula, USA_AK_MatanuskaSusitna, USA_AK_Nome, USA_AK_NorthSlope, USA_AK_NorthwestArctic,
+						USA_AK_PrinceofWalesOuterKetchikan, USA_AK_Sitka, USA_AK_SkagwayHoonahAngoon, USA_AK_SoutheastFairbanks,
+						USA_AK_ValdezCordova, USA_AK_WadeHampton, USA_AK_WrangellPetersburg, USA_AK_Yakutat, USA_AK_YukonKoyukuk]},
+					{"code": "AL", "data": AL, "center": new google.maps.LatLng(32.90, -89.24),
+						"provinces": [USA_AL_Autauga, USA_AL_Baldwin, USA_AL_Barbour,
+						USA_AL_Bibb, USA_AL_Blount, USA_AL_Bullock, USA_AL_Butler, USA_AL_Calhoun, USA_AL_Chambers,
+						USA_AL_Cherokee, USA_AL_Chilton, USA_AL_Choctaw, USA_AL_Clarke, USA_AL_Clay, USA_AL_Cleburne,
+						USA_AL_Coffee, USA_AL_Colbert, USA_AL_Conecuh, USA_AL_Coosa, USA_AL_Covington, USA_AL_Crenshaw,
+						USA_AL_Cullman, USA_AL_Dale, USA_AL_Dallas, USA_AL_DeKalb, USA_AL_Elmore, USA_AL_Escambia,
+						USA_AL_Etowah, USA_AL_Fayette, USA_AL_Franklin, USA_AL_Geneva, USA_AL_Greene, USA_AL_Hale,
+						USA_AL_Henry, USA_AL_Houston, USA_AL_Jackson, USA_AL_Jefferson, USA_AL_Lamar, USA_AL_Lauderdale,
+						USA_AL_Lawrence, USA_AL_Lee, USA_AL_Limestone, USA_AL_Lowndes, USA_AL_Macon, USA_AL_Madison,
+						USA_AL_Marengo, USA_AL_Marion, USA_AL_Marshall, USA_AL_Mobile, USA_AL_Monroe, USA_AL_Montgomery,
+						USA_AL_Morgan, USA_AL_Perry, USA_AL_Pickens, USA_AL_Pike, USA_AL_Randolph, USA_AL_Russell,
+						USA_AL_Shelby, USA_AL_StClair, USA_AL_Sumter, USA_AL_Talladega, USA_AL_Tallapoosa, USA_AL_Tuscaloosa,
+						USA_AL_Walker, USA_AL_Washington, USA_AL_Wilcox, USA_AL_Winston]},
+					{"code": "AR", "data": AR, "center": new google.maps.LatLng(34.56, -92.99),
+						"provinces": [USA_AR_Arkansas, USA_AR_Ashley, USA_AR_Baxter, USA_AR_Benton,
+						USA_AR_Boone, USA_AR_Bradley, USA_AR_Calhoun, USA_AR_Carroll, USA_AR_Chicot, USA_AR_Clark,
+						USA_AR_Clay, USA_AR_Cleburne, USA_AR_Cleveland, USA_AR_Columbia, USA_AR_Conway, USA_AR_Craighead,
+						USA_AR_Crawford, USA_AR_Crittenden, USA_AR_Cross, USA_AR_Dallas, USA_AR_Desha, USA_AR_Drew,
+						USA_AR_Faulkner, USA_AR_Franklin, USA_AR_Fulton, USA_AR_Garland, USA_AR_Grant, USA_AR_Greene,
+						USA_AR_Hempstead, USA_AR_HotSpring, USA_AR_Howard, USA_AR_Independence, USA_AR_Izard, USA_AR_Jackson,
+						USA_AR_Jefferson, USA_AR_Johnson, USA_AR_Lafayette, USA_AR_Lawrence, USA_AR_Lee, USA_AR_Lincoln,
+						USA_AR_LittleRiver, USA_AR_Logan, USA_AR_Lonoke, USA_AR_Madison, USA_AR_Marion, USA_AR_Miller,
+						USA_AR_Mississippi, USA_AR_Monroe, USA_AR_Montgomery, USA_AR_Nevada, USA_AR_Newton, USA_AR_Ouachita,
+						USA_AR_Perry, USA_AR_Phillips, USA_AR_Pike, USA_AR_Poinsett, USA_AR_Polk, USA_AR_Pope, USA_AR_Prairie,
+						USA_AR_Pulaski, USA_AR_Randolph, USA_AR_Saline, USA_AR_Scott, USA_AR_Searcy, USA_AR_Sebastian,
+						USA_AR_Sevier, USA_AR_Sharp, USA_AR_StFrancis, USA_AR_Stone, USA_AR_Union, USA_AR_VanBuren,
+						USA_AR_Washington, USA_AR_White, USA_AR_Woodruff, USA_AR_Yell
+					]},
+					{"code": "AZ", "data": AZ, "center": new google.maps.LatLng(33.79, -110.29),
+						"provinces": [USA_AZ_Apache, USA_AZ_Cochise, USA_AZ_Coconino, USA_AZ_Gila,
+						USA_AZ_Graham, USA_AZ_Greenlee, USA_AZ_LaPaz, USA_AZ_Maricopa, USA_AZ_Mohave, USA_AZ_Navajo,
+						USA_AZ_Pima, USA_AZ_Pinal, USA_AZ_SantaCruz, USA_AZ_Yavapai, USA_AZ_Yuma
+					]},
+					{"code": "CA", "data": CA, "center": new google.maps.LatLng(37.39, -115.65),
+						"provinces": [USA_CA_Alameda, USA_CA_Alpine, USA_CA_Amador, USA_CA_Butte,
+						USA_CA_Calaveras, USA_CA_Colusa, USA_CA_ContraCosta, USA_CA_DelNorte, USA_CA_ElDorado,
+						USA_CA_Fresno, USA_CA_Glenn, USA_CA_Humboldt, USA_CA_Imperial, USA_CA_Inyo, USA_CA_Kern,
+						USA_CA_Kings, USA_CA_Lake, USA_CA_Lassen, USA_CA_LosAngeles, USA_CA_Madera, USA_CA_Marin,
+						USA_CA_Mariposa, USA_CA_Mendocino, USA_CA_Merced, USA_CA_Modoc, USA_CA_Mono, USA_CA_Monterey,
+						USA_CA_Napa, USA_CA_Nevada, USA_CA_Orange, USA_CA_Placer, USA_CA_Plumas, USA_CA_Riverside,
+						USA_CA_Sacramento, USA_CA_SanBenito, USA_CA_SanBernardino, USA_CA_SanDiego, USA_CA_SanFrancisco,
+						USA_CA_SanJoaquin, USA_CA_SanLuisObispo, USA_CA_SanMateo, USA_CA_SantaBarbara, USA_CA_SantaClara,
+						USA_CA_SantaCruz, USA_CA_Shasta, USA_CA_Sierra, USA_CA_Siskiyou, USA_CA_Solano, USA_CA_Sonoma,
+						USA_CA_Stanislaus, USA_CA_Sutter, USA_CA_Tehama, USA_CA_Trinity, USA_CA_Tulare, USA_CA_Tuolumne,
+						USA_CA_Ventura, USA_CA_Yolo, USA_CA_Yuba
+					]},
+					{"code": "CO", "data": CO, "provinces": []}, {"code": "CT", "data": CT, "provinces": []},
+					{"code": "DC", "data": DC, "provinces": []}, {"code": "DE", "data": DE, "provinces": []}, {"code": "FL", "data": FL, "provinces": []}, {"code": "GA", "data": GA, "provinces": []},
+					{"code": "HI", "data": HI, "provinces": []}, {"code": "IA", "data": IA, "provinces": []}, {"code": "ID", "data": ID, "provinces": []}, {"code": "IL", "data": IL, "provinces": []},
+					{"code": "IN", "data": IN, "provinces": []}, {"code": "KS", "data": KS, "provinces": []}, {"code": "KY", "data": KY, "provinces": []}, {"code": "LA", "data": LA, "provinces": []},
+					{"code": "MA", "data": MA, "provinces": []}, {"code": "MD", "data": MD, "provinces": []}, {"code": "ME", "data": ME, "provinces": []}, {"code": "MI", "data": MI, "provinces": []},
+					{"code": "MN", "data": MN, "provinces": []}, {"code": "MO", "data": MO, "provinces": []}, {"code": "MS", "data": MS, "provinces": []}, {"code": "MT", "data": MT, "provinces": []},
+					{"code": "NC", "data": NC, "provinces": []}, {"code": "ND", "data": ND, "provinces": []}, {"code": "NE", "data": NE, "provinces": []}, {"code": "NH", "data": NH, "provinces": []},
+					{"code": "NJ", "data": NJ, "provinces": []}, {"code": "NM", "data": NM, "provinces": []}, {"code": "NV", "data": NV, "provinces": []}, {"code": "NY", "data": NY, "provinces": []},
+					{"code": "OH", "data": OH, "provinces": []}, {"code": "OK", "data": OK, "provinces": []}, {"code": "OR", "data": OR, "provinces": []}, {"code": "PA", "data": PA, "provinces": []},
+					{"code": "PR", "data": PR, "provinces": []}, {"code": "RI", "data": RI, "provinces": []}, {"code": "SC", "data": SC, "provinces": []}, {"code": "SD", "data": SD, "provinces": []},
+					{"code": "TN", "data": TN, "provinces": []}, {"code": "TX", "data": TX, "provinces": []}, {"code": "UT", "data": UT, "provinces": []}, {"code": "VA", "data": VA, "provinces": []},
+					{"code": "VT", "data": VT, "provinces": []}, {"code": "WA", "data": WA, "provinces": []}, {"code": "WI", "data": WI, "provinces": []}, {"code": "WV", "data": WV, "provinces": []},
+					{"code": "WY", "data": WY, "provinces": []}
+				]
+			};
+			var mapOfStates;
+			google.maps.event.addDomListener(window, 'load', initialize);
+
+			function initialize() {
+				var mapOptions = {
+					center: {lat: 37.03212180866224, lng: -100.154296875},
+					zoom: 4,
+					disableDefaultUI: false,
+					draggable: true,
+					keyboardShortcuts: false
+				};
+				mapOfStates = new google.maps.Map(document.getElementById('map-us-states-canvas'), mapOptions);
+
+				var states = geoarray.states;
+				for (var i = 0; i < states.length; i++) {
+					mapOfStates.data.addGeoJson(states[i].data);
+				}
+
+				mapOfStates.data.setStyle(function(feature) {
+					var name = feature.getProperty('name').toLowerCase();
+					var color = 'yellow';
+					if (name.indexOf('e') > -1) {
+						color = 'red';
+					} else if (name.indexOf('n') > -1) {
+						color = 'green';
+					}
+					return {
+						fillColor: color,
+						strokeColor: '#FFFFFF',
+						strokeWeight: 1.5
+					};
+				});
+
+				mapOfStates.data.addListener('dblclick', function(event) {
+					// delete data layer with
+					mapOfStates.data.forEach(function (feature) {
+						mapOfStates.data.remove(feature);
+
+					});
+					// find provinces
+					var name = event.feature.getProperty('name');
+					var provinces;
+					var states = geoarray.states;
+					var center;
+					for (var i = 0; i < states.length; i++) {
+						if (states[i].data.features[0].properties.name == name) {
+							provinces = states[i].provinces;
+							center = states[i].center;
+							break;
+						}
+					}
+					if ((provinces == undefined) || (provinces.length == 0)) {
+						return;
+					}
+					// load new data layer
+					for (var i = 0; i < provinces.length; i++) {
+						console.log(provinces[i].features[0].properties.name);
+						//verify rule http://geojson.org/geojson-spec.html#linestring
+						var coordinates = provinces[i].features[0].geometry.coordinates;
+						for (j = 0; j < coordinates.length; j++) {
+							var firstPoint = coordinates[j][0][0];
+							var lastPoint = coordinates[j][0][coordinates[j][0].length - 1];
+							if ((firstPoint[0] != lastPoint[0]) || (firstPoint[1] != lastPoint[1])) {
+								coordinates[j][0].push(firstPoint);
+							}
+						}
+						//add geo data
+						mapOfStates.data.addGeoJson(provinces[i]);
+
+					}
+					// set new zoom
+					mapOfStates.setZoom(5);
+					// set new center
+					if (center != undefined) {
+						mapOfStates.setCenter(center);
+					}
+				});
+			}
+		</script>
+
+		<script type="text/javascript">
+			google.load( 'visualization', '1', { packages:['corechart'] });
+
+			function ChartMarker( options ) {
+				this.setValues( options );
+
+				this.$inner = $('<div>').css({
+					position: 'relative',
+					left: '-50%', top: '-50%',
+					width: options.width,
+					height: options.height,
+					fontSize: '1px',
+					lineHeight: '1px',
+					//border: '1px solid #888',
+					padding: '2px',
+					backgroundColor: 'transparent',
+					cursor: 'default'
+				});
+
+				this.$div = $('<div>')
+						.append( this.$inner )
+						.css({
+							position: 'absolute',
+							display: 'none'
+						});
+			};
+
+			ChartMarker.prototype = new google.maps.OverlayView;
+
+			ChartMarker.prototype.onAdd = function() {
+				$( this.getPanes().overlayMouseTarget ).append( this.$div );
+			};
+
+			ChartMarker.prototype.onRemove = function() {
+				this.$div.remove();
+			};
+
+			ChartMarker.prototype.draw = function() {
+				var marker = this;
+				var projection = this.getProjection();
+				var position = projection.fromLatLngToDivPixel( this.get('position') );
+
+				this.$div.css({
+					left: position.x,
+					top: position.y,
+					display: 'block'
+				})
+
+				this.$inner
+						.html( '<img src="' + this.get('image') + '"/>' )
+						.click( function( event ) {
+							var events = marker.get('events');
+							events && events.click( event );
+						});
+
+				this.chart = new google.visualization.PieChart( this.$inner[0] );
+				this.chart.draw( this.get('chartData'), this.get('chartOptions') );
+			};
+
+			function initialize() {
+				var latLng = new google.maps.LatLng( 40.708762, -74.006731 );
+
+				var map = new google.maps.Map( $('#map-pie-chart-canvas')[0], {
+					zoom: 15,
+					center: latLng
+				});
+
+				var data = google.visualization.arrayToDataTable([[ 'Task', 'Hours per Day' ], [ 'Work', 11 ], [ 'Eat', 2 ], [ 'Commute', 2 ], [ 'Watch TV', 2 ], [ 'Sleep', 7 ]]);
+
+				var options = {
+					legend: {position: 'none'},
+					fontSize: 8,
+					backgroundColor: 'transparent'
+				};
+
+				var marker = new ChartMarker({
+					map: map,
+					position: latLng,
+					width: '75px',
+					height: '75px',
+					chartData: data,
+					chartOptions: options,
+					events: {
+						click: function( event ) {
+							alert( 'Additional info' );
+						}
+					}
+				});
+			};
+
+			$( initialize );
+		</script>
+
+		<script type="text/javascript">
+			google.load( 'visualization', '1', { packages:['corechart'] });
+
+			var geoDonuts = {
+				"country": "USA",
+				"states" : [
+					{"code": "AK", "data": AK, "center": new google.maps.LatLng(66, -151), "name": "Alaska" },
+					{"code": "AL", "data": AL, "center": new google.maps.LatLng(35, -89), "name": "Alabama"},
+					{"code": "AR", "data": AR, "center": new google.maps.LatLng(37, -96), "name": "Arkansas"},
+					{"code": "AZ", "data": AZ, "center": new google.maps.LatLng(36, -114), "name": "Arizona"},
+					{"code": "CA", "data": CA, "center": new google.maps.LatLng(38, -121), "name": "California"},
+					{"code": "CO", "data": CO, "center": new google.maps.LatLng(41, -109), "name": "Colorado"},
+					{"code": "CT", "data": CT, "center": new google.maps.LatLng(43, -77), "name": "Connecticut"},
+					{"code": "DC", "data": DC, "center": new google.maps.LatLng(40, -79)},
+					{"code": "DE", "data": DE, "center": new google.maps.LatLng(0,0)},
+					{"code": "FL", "data": FL, "center": new google.maps.LatLng(0,0)},
+					{"code": "GA", "data": GA, "center": new google.maps.LatLng(0,0)},
+					{"code": "HI", "data": HI, "center": new google.maps.LatLng(0,0)},
+					{"code": "IA", "data": IA, "center": new google.maps.LatLng(0,0)},
+					{"code": "ID", "data": ID, "center": new google.maps.LatLng(0,0)},
+					{"code": "IL", "data": IL, "center": new google.maps.LatLng(0,0)},
+					{"code": "IN", "data": IN}, {"code": "KS", "data": KS},
+					{"code": "KY", "data": KY}, {"code": "LA", "data": LA}, {"code": "MA", "data": MA}, {"code": "MD", "data": MD},
+					{"code": "ME", "data": ME}, {"code": "MI", "data": MI},	{"code": "MN", "data": MN},	{"code": "MO", "data": MO},
+					{"code": "MS", "data": MS}, {"code": "MT", "data": MT}, {"code": "NC", "data": NC}, {"code": "ND", "data": ND},
+					{"code": "NE", "data": NE}, {"code": "NH", "data": NH}, {"code": "NJ", "data": NJ}, {"code": "NM", "data": NM},
+					{"code": "NV", "data": NV}, {"code": "NY", "data": NY}, {"code": "OH", "data": OH}, {"code": "OK", "data": OK},
+					{"code": "OR", "data": OR}, {"code": "PA", "data": PA}, {"code": "PR", "data": PR}, {"code": "RI", "data": RI},
+					{"code": "SC", "data": SC}, {"code": "SD", "data": SD}, {"code": "TN", "data": TN}, {"code": "TX", "data": TX},
+					{"code": "UT", "data": UT}, {"code": "VA", "data": VA}, {"code": "VT", "data": VT}, {"code": "WA", "data": WA},
+					{"code": "WI", "data": WI}, {"code": "WV", "data": WV}, {"code": "WY", "data": WY}
+				]
+			};
+
+			var map;
+
+			function DonutChartMarker( options ) {
+				this.setValues( options );
+
+				this.$inner = $('<div>').css({
+					position: 'relative',
+					//left: '-20%',
+					//top: '-20%',
+					width: options.width,
+					height: options.height,
+					fontSize: '1px',
+					lineHeight: '1px',
+					padding: '2px',
+					backgroundColor: 'transparent',
+					cursor: 'default'
+				});
+
+				this.$div = $('<div>')
+						.append( this.$inner )
+						.css({
+							position: 'absolute',
+							display: 'none'
+						});
+			};
+
+			DonutChartMarker.prototype = new google.maps.OverlayView;
+
+			DonutChartMarker.prototype.onAdd = function() {
+				$( this.getPanes().overlayMouseTarget ).append( this.$div );
+			};
+
+			DonutChartMarker.prototype.onRemove = function() {
+				this.$div.remove();
+			};
+
+			DonutChartMarker.prototype.draw = function() {
+				var marker = this;
+				var projection = this.getProjection();
+				var position = projection.fromLatLngToDivPixel( this.get('position') );
+
+				this.$div.css({
+					left: position.x,
+					top: position.y,
+					display: 'block'
+				})
+
+				this.$inner
+						.html( '<img src="' + this.get('image') + '"/>' )
+						.click( function( event ) {
+							var events = marker.get('events');
+							events && events.click( event );
+						});
+
+				this.chart = new google.visualization.PieChart( this.$inner[0] );
+				this.chart.draw( this.get('chartData'), this.get('chartOptions') );
+			};
+
+			function initialize() {
+				var mapOptions = {
+					center: {lat: 37, lng: -97},
+					zoom: 4,
+					disableDefaultUI: false,
+					draggable: true,
+					keyboardShortcuts: false,
+					mapTypeId: google.maps.MapTypeId.NORMAL
+				};
+				map = new google.maps.Map($('#map-donuts-chart-canvas')[0], mapOptions);
+
+				var states = geoDonuts.states;
+
+				for (var i = 0; i < states.length; i++) {
+					map.data.addGeoJson(states[i].data);
+				}
+
+				map.data.setStyle(function(feature) {
+					return {
+						fillColor: 'silver',
+						strokeColor: '#FFFFFF',
+						strokeWeight: 1.5,
+						fillOpacity: 1
+					};
+				});
+
+				for (var i = 0; i < states.length; i++) {
+					if (states[i].code == 'DC') {
+						break;
+					}
+					var options = {
+						legend: {position: 'none'},
+						fontSize: 8,
+						backgroundColor: 'transparent',
+						pieHole: 0.4,
+						title: states[i].name
+					};
+					var d = getRandomDonutData();
+					var data = google.visualization.arrayToDataTable([[ 'Task', 'Hours per Day' ], [ 'Work', d[0] ], [ 'Eat', d[1] ], [ 'Commute', d[2] ], [ 'Watch TV', d[3] ], [ 'Sleep', d[4] ]]);
+					var marker = new DonutChartMarker({
+						map: map,
+						position: states[i].center,
+						width: '60px',
+						height: '60px',
+						chartData: data,
+						chartOptions: options,
+						events: {
+							click: function( event ) {
+								alert( 'Additional info' );
+							}
+						}
+					});
+				}
+			}
+
+			google.maps.event.addDomListener(window, 'load', initialize);
+
+			function getRandomDonutData() {
+				var result = [];
+				var sleep = 24;
+				for (var i = 0; i < 4; i++) {
+					var value = Math.floor(Math.random()*4) + 2;
+					result.push(value);
+					sleep = sleep - value;
+				}
+				result.push(sleep);
+				return result;
+			}
+		</script>
+
+	</head>
+	<body>
+	<div style="width: 800px;">
+		<p><h3>Google Map Visualization</h3></p>
+		<p>There are several examples that can demonstrate possibilities of map visualization. The first example is the map of US with rendering bounds of states and filling states by different colors.</p>
+		<p>If you double click on the following states: <b>Alabama, Arkansas, Arizona, California</b> you can see details of state. To return previous view refresh page.</p>
+		<p id="map-us-states-canvas" style="width: 800px; height: 600px;"></p>
+		<p>The Google map provides possibilities to add on the map different objects. The next example is adding the pie chart to map.</p>
+		<p>You can mouse over the parts of pie and get additional information.</p>
+		<p id="map-pie-chart-canvas" style="width: 800px; height: 600px;"></p>
+		<p>So we can add any google chart to map. For example donuts charts for US.</p>
+		<p id="map-donuts-chart-canvas" style="width: 800px; height: 600px;"></p>
+	</div>
+	</body>
+</html>

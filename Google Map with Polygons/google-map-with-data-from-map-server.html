@@ -2,42 +2,164 @@
 <html>
 	<head>
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBIqw_7EWV0niZcGAEVCEMGYQqXRIgSKok"></script>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript">
 			var map;
-			
-			google.maps.event.addDomListener(window, 'load', initialize);
-			
-			function initialize() {
-				var mapOptions = {
-					center: {lat: 48, lng: -102},
-					zoom: 4,
-					disableDefaultUI: false,
-					draggable: true,
-					keyboardShortcuts: false
-				};
+			var codeStates = [];
+			var usa = [];
+
+			var mapOptions = {
+				center: {lat: 48, lng: -102},
+				zoom: 4,
+				disableDefaultUI: false,
+				draggable: true,
+				keyboardShortcuts: false
+			};
+
+			function loadZipcodes() {
+				codeStates["01"] = "AL";
+				codeStates["30"] = "MT";
+				codeStates["02"] = "AK";
+				codeStates["31"] = "NE";
+				codeStates["04"] = "AZ";
+				codeStates["32"] = "NV";
+				codeStates["05"] = "AR";
+				codeStates["33"] = "NH";
+				codeStates["06"] = "CA";
+				codeStates["34"] = "NJ";
+				codeStates["08"] = "CO";
+				codeStates["35"] = "NM";
+				codeStates["09"] = "CT";
+				codeStates["36"] = "NY";
+				codeStates["10"] = "DE";
+				codeStates["37"] = "NC";
+				codeStates["11"] = "DC";
+				codeStates["38"] = "ND";
+				codeStates["12"] = "FL";
+				codeStates["39"] = "OH";
+				codeStates["13"] = "GA";
+				codeStates["40"] = "OK";
+				codeStates["15"] = "HI";
+				codeStates["41"] = "OR";
+				codeStates["16"] = "ID";
+				codeStates["42"] = "PA";
+				codeStates["17"] = "IL";
+				codeStates["44"] = "RI";
+				codeStates["18"] = "IN";
+				codeStates["45"] = "SC";
+				codeStates["19"] = "IA";
+				codeStates["46"] = "SD";
+				codeStates["20"] = "KS";
+				codeStates["47"] = "TN";
+				codeStates["21"] = "KY";
+				codeStates["48"] = "TX";
+				codeStates["22"] = "LA";
+				codeStates["49"] = "UT";
+				codeStates["23"] = "ME";
+				codeStates["50"] = "VT";
+				codeStates["24"] = "MD";
+				codeStates["51"] = "VA";
+				codeStates["25"] = "MA";
+				codeStates["53"] = "WA";
+				codeStates["26"] = "MI";
+				codeStates["54"] = "WV";
+				codeStates["27"] = "MN";
+				codeStates["55"] = "WI";
+				codeStates["28"] = "MS";
+				codeStates["56"] = "WY";
+				codeStates["29"] = "MO";
+
+				var states = [
+					"AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY",
+					"LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH",
+					"OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"
+				];
+
+				states.forEach(function(state) {
+					jQuery.getJSON("http://gomashup.com/json.php?fds=geo/usa/zipcode/state/" + state + "&jsoncallback=?", function(result) {
+						usa[state] = {
+							"code": state,
+							"counties": []
+						};
+						var zipcodesinfo = result.result;
+						zipcodesinfo.forEach(function(zipcodeinfo){
+							if (usa[state].counties[zipcodeinfo.County] == undefined) {
+								usa[state].counties[zipcodeinfo.County] = {
+									"name": zipcodeinfo.County,
+									"zipcodes": []
+								};
+							}
+							usa[state].counties[zipcodeinfo.County].zipcodes.push(zipcodeinfo.Zipcode);
+						});
+					});
+				});
+			};
+
+			function loadStatesData() {
 				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-				map.data.loadGeoJson("http://169.254.54.220:8080/geojson/us/state/CO");
-
+				map.data.loadGeoJson("http://169.254.54.220:8080/geojson/us/state/AK,AL,AR,AZ,CA,CO,CT,DC,DE,FL,GA,HI,IA,ID,IL,IN,KS,KY,LA,MA,MD,ME,MI,MN,MO,MS,MT,NC,ND,NE,NH,NJ,NM,NV,NY,OH,OK,OR,PA,PR,RI,SC,SD,TN,TX,UT,VA,VT,WA,WI,WV,WY");
 				map.data.setStyle(function(feature) {
+					var colorIndex = Math.floor(Math.random()*10);
 					return {
-						fillColor: 'blue',
+						fillColor: colorIndex < 4 ? 'red' : colorIndex > 6 ? 'green' : 'blue',
 						strokeColor: '#FFFFFF',
 						strokeWeight: 1.5
 					};
 				});
-			}
+				map.data.addListener('dblclick', function(event) {
+					loadCountiesData(event.feature.getProperty('geoid'));
+				});
+			};
+
+			function loadCountiesData(geoid) {
+				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				map.data.loadGeoJson("http://169.254.54.220:8080/geojson/us/county/" + geoid);
+				map.data.setStyle(function(feature) {
+					var colorIndex = Math.floor(Math.random()*10);
+					return {
+						fillColor: colorIndex < 4 ? 'red' : colorIndex > 6 ? 'green' : 'blue',
+						strokeColor: '#FFFFFF',
+						strokeWeight: 1.5
+					};
+				});
+				map.data.addListener('dblclick', function(event) {
+					loadZipcodesData(event.feature.getProperty('state'), event.feature.getProperty('name'));
+				});
+			};
+
+			function loadZipcodesData(codeState, county) {
+				var ziplist = "";
+				usa[codeStates[codeState]].counties[county.toUpperCase()].zipcodes.forEach(function(zipcode){
+					ziplist = ziplist + zipcode + ",";
+				});
+				ziplist =  ziplist.substring(0, ziplist.length - 1);
+
+				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				map.data.loadGeoJson("http://169.254.54.220:8080/geojson/us/zip/" + ziplist);
+				map.data.setStyle(function(feature) {
+					var colorIndex = Math.floor(Math.random()*10);
+					return {
+						fillColor: colorIndex < 4 ? 'red' : colorIndex > 6 ? 'green' : 'blue',
+						strokeColor: '#FFFFFF',
+						strokeWeight: 1.5
+					};
+				});
+			};
+
+			function initialize() {
+				loadZipcodes();
+				loadStatesData();
+			};
+
+			google.maps.event.addDomListener(window, 'load', initialize);
 		</script>
 	</head>
 	<body>
 		<table>
 			<tr><td>
-				<button onclick="alert(map.getCenter());">Get center</button>
-			</td></tr>
-			<tr><td>
 				<div id="info-box" align='right'>Info box</div>
 			</td></tr>
-			<tr><td>				
+			<tr><td>
 				<div id="map-canvas" style="width: 1200px; height: 800px;"></div>
 			</td></tr>
 		</table>

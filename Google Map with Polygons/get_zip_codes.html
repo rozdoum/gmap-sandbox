@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<!-- states bounds -->
+
+	<script type="text/javascript">
+		var states = [
+			"AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY",
+			"LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH",
+			"OK", "OR", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"
+		];
+
+		var usa = [];
+		$(document).ready(function () {
+			states.forEach(function(state) {
+				jQuery.getJSON("http://gomashup.com/json.php?fds=geo/usa/zipcode/state/" + state + "&jsoncallback=?", function(result) {
+					usa[state] = {
+						"code": state,
+						"counties": []
+					};
+					var zipcodesinfo = result.result;
+					zipcodesinfo.forEach(function(zipcodeinfo){
+						if (usa[state].counties[zipcodeinfo.County] == undefined) {
+							usa[state].counties[zipcodeinfo.County] = {
+								"name": zipcodeinfo.County,
+								"zipcodes": []
+							};
+						}
+						usa[state].counties[zipcodeinfo.County].zipcodes.push(zipcodeinfo.Zipcode);
+					});
+				});
+			});
+			JSON.stringify(usa);
+			console.log(usa);
+		});
+	</script>
+</head>
+<body>
+</body>
+</html>
